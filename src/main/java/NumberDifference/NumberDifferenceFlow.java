@@ -7,8 +7,9 @@ public class NumberDifferenceFlow {
 	public void execute() {
 		Screen layout =  new Screen();
 		CalcNUmberDifference proc = new CalcNUmberDifference();
-    	int nBil, differenceBil;
-    	ArrayList<Integer> deretBil = new ArrayList<Integer>();
+    	int nBil;
+		int differenceBil;
+    	ArrayList<Integer> deretBil;
     	String messageGroup;
     	
     	layout.printHeader();
