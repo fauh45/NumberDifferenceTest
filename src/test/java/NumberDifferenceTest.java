@@ -25,34 +25,102 @@ public class NumberDifferenceTest {
 		sut = new CalcNUmberDifference();
 	}
 
+	/**
+	 * Test Case yang dibuat oleh Afdal Ramdan Daman Huri
+	 */
+
+	/**
+	 * Test Case No. 1
+	 */
 	@Test
-	public void testInputNBilLuarRange_01() {
-		// (1) setup (arrange, build)
+	public void testNRangeNoValidLowBoundary() {
 		int jumlahDeretBil;
 		boolean actual, expected;
-		jumlahDeretBil = 15; // bukan berada pada range 1-10
+		jumlahDeretBil = 0;
 		expected = false;
 
-		// (2) exercise (act, operate)
 		actual = sut.validateRangeInputMaxDeret(jumlahDeretBil);
 
-		// (3) verify (assert, check)
 		assertEquals(expected, actual);
 	}
 
+	/**
+	 * Test Case No. 2
+	 */
 	@Test
-	public void testInputNBilDalamRange_01() {
-		// (1) setup (arrange, build)
+	public void testNRangeNoValidUpBoundary() {
 		int jumlahDeretBil;
 		boolean actual, expected;
-		jumlahDeretBil = 5; // berada pada range 1-10
-		expected = true;
+		jumlahDeretBil = 11;
+		expected = false;
 
-		// (2) exercise (act, operate)
 		actual = sut.validateRangeInputMaxDeret(jumlahDeretBil);
 
-		// (3) verify (assert, check)
 		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test Case No. 3
+	 */
+	@Test
+	public void testNonGroupNoDiffNonLoop() {
+		ArrayList<Integer> testData = new ArrayList<>(Arrays.asList(5));
+		String expectedMessage = "Difference : 0\nNon Group, There's no difference";
+		Integer expectedDifference = 0;
+
+		Integer actualDifference = sut.numberDiffirenceProcess(testData);
+		assertEquals(expectedDifference, actualDifference);
+
+		String actualMessage = sut.groupingDifference(actualDifference);
+		assertEquals(expectedMessage, actualMessage);
+	}
+
+	/**
+	 * Test Case No. 4
+	 */
+	@Test
+	public void testNonGroupNoDiff1xLoop() {
+		ArrayList<Integer> testData = new ArrayList<>(Arrays.asList(5, 5));
+		String expectedMessage = "Difference : 0\nNon Group, There's no difference";
+		Integer expectedDifference = 0;
+
+		Integer actualDifference = sut.numberDiffirenceProcess(testData);
+		assertEquals(expectedDifference, actualDifference);
+
+		String actualMessage = sut.groupingDifference(actualDifference);
+		assertEquals(expectedMessage, actualMessage);
+	}
+
+	/**
+	 * Test Case No. 5
+	 */
+	@Test
+	public void testNonGroupNoDiff2xLoop() {
+		ArrayList<Integer> testData = new ArrayList<>(Arrays.asList(5, 5, 5));
+		String expectedMessage = "Difference : 0\nNon Group, There's no difference";
+		Integer expectedDifference = 0;
+
+		Integer actualDifference = sut.numberDiffirenceProcess(testData);
+		assertEquals(expectedDifference, actualDifference);
+
+		String actualMessage = sut.groupingDifference(actualDifference);
+		assertEquals(expectedMessage, actualMessage);
+	}
+
+	/**
+	 * Test Case No. 6
+	 */
+	@Test
+	public void testNonGroupNoDiff5xLoop() {
+		ArrayList<Integer> testData = new ArrayList<>(Arrays.asList(5, 5, 5, 5, 5, 5));
+		String expectedMessage = "Difference : 0\nNon Group, There's no difference";
+		Integer expectedDifference = 0;
+
+		Integer actualDifference = sut.numberDiffirenceProcess(testData);
+		assertEquals(expectedDifference, actualDifference);
+
+		String actualMessage = sut.groupingDifference(actualDifference);
+		assertEquals(expectedMessage, actualMessage);
 	}
 
 	/**
