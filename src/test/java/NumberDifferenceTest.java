@@ -4,6 +4,9 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import numberdifference.App;
+import numberdifference.CalcNUmberDifference;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,9 +15,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
-
-import NumberDifference.CalcNUmberDifference;
-import NumberDifference.App;
 
 public class NumberDifferenceTest {
 	private CalcNUmberDifference sut;

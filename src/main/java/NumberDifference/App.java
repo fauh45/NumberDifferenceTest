@@ -1,4 +1,4 @@
-package NumberDifference;
+package numberdifference;
 
 /**
  * Hello world!
